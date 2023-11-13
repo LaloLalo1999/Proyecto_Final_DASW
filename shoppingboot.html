@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <style>
+    .pagination{
+        justify-content: center;
+    }
+    .media{
+      border: 1px solid #dee2e6;
+      padding: 5px 20px;
+      border-radius: 5px;
+    }
+    .input-group-append {
+      margin-left: 5px;
+}
+
+</style>
+  </head>
+  <body>
+   
+    
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="home.html">DASW</a>
+      <a class="navbar-brand" href="homeboot.html">Inicio</a>
+
+      <div class="flex-grow-1">
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control col-10" type="text" placeholder="Encuentra lo que quieras pa">
+              <button class="btn btn-outline-light col-2" type="submit">Buscar</button>
+          </form>
+      </div>
+  
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style = "margin-left: 200px;">Mi cuenta</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#login">Login</a>
+                      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#registro">Registrarse</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Mis pedidos</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="shoppingboot.html"><i class="fa fa-shopping-cart"></i></a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  
+      
+  <div class="modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Registrar usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="registroForm">
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" id="nombre" class="form-control" placeholder="Nombre(s)" required>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="apellidos" class="form-control" placeholder="Apellidos" required>
+                </div>
+            </div>
+            <input type="mail" id="correo" class="form-control mt-3" placeholder="Tu correo" required>
+            <input type="password" id="contrasena" class="form-control mt-3" placeholder="Contraseña" required>
+            <input type="password" id="confirmContrasena" class="form-control mt-3" placeholder="Confirmar contraseña" required>
+            <button type="submit" class="btn btn-success mt-3 mx-auto w-100">Registrarse</button>
+
+          </form>
+          <div id="mensajeExito" class="alert alert-success mt-3" style="display:none;">Usuario registrado con éxito!</div>
+      </div>
+        </form>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="form-group">
+              <label for="">Correo</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-user    "></i></span>
+                </div>
+                <input type="text" class="col-10 form-control" name="" id="" aria-describedby="helpId"
+                  placeholder="correo registrado">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon2"><i class="fas fa-key    "></i></span>
+                </div>
+                <input type="password" class="col-10 form-control" name="" id="" aria-describedby="helpId"
+                  placeholder="ingresa tu contraseña">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls">
+                <button type="button" id="loginButton" class="btn btn-success mt-3 mx-auto w-100">Login</button>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 control">
+                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                  No tienes cuenta!
+                  <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registro">
+                    Registrate aquí
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-3">
+    <h2>Resumen de compra</h2>
+   </div>
+<div class="container" style="margin:50px">
+  <div class = "row">
+    <div class = "container col-md-8">
+      <div class = "media">
+        <div class = "media-body">
+          <div class = "input-group">
+            <h4>Ciri obesidad </h4>
+            <div class = "input-group-append">
+             <a href = "#" class="btn btn-danger"> <i class = "fas fa-trash-alt"></i></a>
+            </div>
+            <div class="input-group mb-3" style="margin: 10px;">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Cantidad</label>
+              </div>
+              <select class="custom-select" id="inputGroupSelect01">
+                <option selected>Elige...</option>
+                <option value="1">uno</option>
+                <option value="2">dos</option>
+                <option value="3">tres</option>
+              </select>
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="button"><i class="fas fa-pencil-alt"></i></button>
+              </div>
+              <div class="input-group mb-3 " style = "margin-top: 10px;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Precio</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value = "1 peso por kilo">
+                <div class="input-group-append">
+                  <span class="input-group-text">$m.x.n</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class = "media-right">
+          <img class = "rounded" src="images/yo.JPG" width="150px" height="150px" alt="">
+        </div>
+      </div>
+      <div class = "media">
+        <div class = "media-body">
+          <div class = "input-group">
+            <h4>Ciri obesidad </h4>
+            <div class = "input-group-append">
+             <a href = "#" class="btn btn-danger"> <i class = "fas fa-trash-alt"></i></a>
+            </div>
+            <div class="input-group mb-3" style="margin: 10px;">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Cantidad</label>
+              </div>
+              <select class="custom-select" id="inputGroupSelect01">
+                <option selected>Elige...</option>
+                <option value="1">uno</option>
+                <option value="2">dos</option>
+                <option value="3">tres</option>
+              </select>
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="button"><i class="fas fa-pencil-alt"></i></button>
+              </div>
+              <div class="input-group mb-3 " style = "margin-top: 10px;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Precio</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value = "1">
+                <div class="input-group-append">
+                  <span class="input-group-text">$m.x.n</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class = "media-right">
+          <img class = "rounded" src="images/yo.JPG" width="150px" height="150px" alt="">
+        </div>
+      </div>
+    <div class = "media-right">
+    
+  </div>
+</div>
+
+</div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="container col-md-4" style="margin-right: 240px; width: 100%; margin-top: -400px;">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Total de compra</h5>
+                  <hr>
+                  <p>Ciri 2 x 500.00</p>
+                  <p>Costo de envio 30.00</p>
+                  <hr>
+                  <p>Monto total: 530.00</p>
+                  <button class="btn btn-outline-success btn-block">Pagar</button>
+                  <br>
+                  <button class="btn btn-outline-danger btn-block">Cancelar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
